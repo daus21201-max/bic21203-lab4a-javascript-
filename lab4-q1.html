@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First JavaScript</h1>
+
+<p>JavaScript can change the content of an HTML element:</p>
+
+<div id="myElement">
+  <p id="message">Welcome to my website!</p>
+</div>
+<button id="changeBtn" type="button">Change Message</button>
+
+<script>
+var message = document.getElementById("message");
+var changeBtn = document.getElementById("changeBtn");
+
+function changeMessage() {
+  message.textContent = "Hello there!";
+}
+
+changeBtn.addEventListener("click", changeMessage);
+</script>
+
+</body>
+</html>

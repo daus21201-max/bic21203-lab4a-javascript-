@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q2 - Smart Number Validator</title>
+</head>
+<body>
+  <h1>Q2: Smart Number Validator</h1>
+
+  <label for="userInput">Enter a number:</label>
+  <input type="text" id="userInput" placeholder="Enter a number">
+  <button id="checkBtn" type="button">Check</button>
+  <p id="result" role="status" aria-live="polite"></p>
+
+  <script>
+    // Select the elements
+    var userInput = document.getElementById("userInput");
+    var checkBtn = document.getElementById("checkBtn");
+    var result = document.getElementById("result");
+
+    function checkInput() {
+      // Read the input and remove spaces at the start and end
+      var text = userInput.value.trim();
+
+      if (text === "") {
+        result.textContent = "Please enter a valid number!";
+        return;
+      }
+
+      var number = Number(text);
+
+      if (isNaN(number)) {
+        result.textContent = "Please enter a valid number!";
+      } else if (number < 10) {
+        result.textContent = "The number is lower than 10";
+      } else if (number > 10) {
+        result.textContent = "The number is higher than 10";
+      } else {
+        result.textContent = "The number is equal to 10";
+      }
+    }
+
+    checkBtn.addEventListener("click", checkInput);
+  </script>
+</body>
+</html>

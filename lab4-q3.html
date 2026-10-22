@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q3 - Dynamic Number Generator</title>
+</head>
+<body>
+  <h1>Q3: Dynamic Number Generator</h1>
+
+  <button id="generateBtn" type="button">Generate</button>
+  <ol id="numberList"></ol>
+
+  <script>
+    var generateBtn = document.getElementById("generateBtn");
+    var numberList = document.getElementById("numberList");
+
+    function generateNumbers() {
+      // Clear old items so repeated clicks do not duplicate
+      numberList.textContent = "";
+
+      for (var i = 1; i <= 5; i++) {
+        var item = document.createElement("li");   // create <li>
+        item.textContent = "The number is " + i;   // set its text
+        numberList.appendChild(item);              // add it to the <ol>
+      }
+    }
+
+    generateBtn.addEventListener("click", generateNumbers);
+  </script>
+</body>
+</html>
